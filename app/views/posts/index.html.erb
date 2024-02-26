@@ -1,0 +1,13 @@
+<%= link_to "users", users_path%>,
+<%= link_to "new post", new_post_path%>
+
+<h1>Posts</h1>
+<% @posts.each do |post| %>
+  <div>
+    <p><%= post.message%></p>
+
+    <% post.images.each do |image| %>
+      <%= image_tag image.variant(resize_to_fill: [500, nil]) %>
+    <% end %>
+  </div>
+<% end %>

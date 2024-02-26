@@ -11,6 +11,13 @@
   </head>
 
   <body>
+    <% if flash[:notice].present? %>
+      <div class="notice">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <p/>
+
     <%= yield %>
   </body>
 </html>
